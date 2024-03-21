@@ -365,7 +365,7 @@ class WebSkeleton(object):
         try:
             assets_env["css"] = assets_css_env["css"].urls()
         except Exception as error:
-            # some_error = True
+            some_error = True
             assets_env["css"] = []
             print(error)
             pass
@@ -373,7 +373,7 @@ class WebSkeleton(object):
         try:
             assets_env["top_js"] = assets_top_js_env["top_js"].urls()
         except Exception as error:
-            # some_error = True
+            some_error = True
             assets_env["top_js"] = []
             print(error)
             pass
@@ -381,7 +381,7 @@ class WebSkeleton(object):
         try:
             assets_env["module_js"] = assets_module_js_env["module_js"].urls()
         except Exception as error:
-            # some_error = True
+            some_error = True
             assets_env["module_js"] = []
             print(error)
             pass
@@ -389,13 +389,10 @@ class WebSkeleton(object):
         try:
             assets_env["bottom_js"] = assets_bottom_js_env["bottom_js"].urls()
         except Exception as error:
-            # some_error = True
+            some_error = True
             assets_env["bottom_js"] = []
             print(error)
             pass
-
-        if some_error:
-            return -1
 
         kw.update(assets_env=assets_env)
 
@@ -419,7 +416,10 @@ class WebSkeleton(object):
         fd = open(index_html, 'w')
         fd.write(html)
         fd.close()
-        print('\nOK: Created "%s" file.\n' % (index_html,))
+        if some_error:
+            print("\033[91m{}\033[00m".format('\nERROR: Created "%s" file with some error.\n' % (index_html,)))
+        else:
+            print('\nOK: Created "%s" file.\n' % (index_html,))
         return 0
 
     def get_mako_lookup(self, code_path, output_path):
