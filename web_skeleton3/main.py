@@ -365,28 +365,32 @@ class WebSkeleton(object):
         try:
             assets_env["css"] = assets_css_env["css"].urls()
         except Exception as error:
-            some_error = True
+            # some_error = True
+            assets_env["css"] = []
             print(error)
             pass
 
         try:
             assets_env["top_js"] = assets_top_js_env["top_js"].urls()
         except Exception as error:
-            some_error = True
+            # some_error = True
+            assets_env["top_js"] = []
             print(error)
             pass
 
         try:
             assets_env["module_js"] = assets_module_js_env["module_js"].urls()
         except Exception as error:
-            some_error = True
+            # some_error = True
+            assets_env["module_js"] = []
             print(error)
             pass
 
         try:
             assets_env["bottom_js"] = assets_bottom_js_env["bottom_js"].urls()
         except Exception as error:
-            some_error = True
+            # some_error = True
+            assets_env["bottom_js"] = []
             print(error)
             pass
 
