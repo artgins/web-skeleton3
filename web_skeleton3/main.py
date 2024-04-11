@@ -489,7 +489,8 @@ class WebSkeleton(object):
             css = Bundle(
                 css_bundle,
                 *scss_bundle,
-                filters='cssutils,cssrewrite',
+                #filters='cssutils,cssrewrite',
+                filters='cleancss',
                 output='packed.css'
             )
             assets_env.register('css', css)
@@ -519,7 +520,8 @@ class WebSkeleton(object):
             # if top_js_list and len(top_js_list):
         top_js = Bundle(
             *top_js_list,
-            filters='rjsmin',
+            #filters='rjsmin',
+            filters='uglifyjs',
             output='top.js'
         )
         assets_env.register('top_js', top_js)
@@ -549,14 +551,16 @@ class WebSkeleton(object):
             # if module_js_list and len(module_js_list):
             #     module_js = Bundle(
             #         *module_js_list,
-            #         filters='rjsmin',
+            #         #filters='rjsmin',
+            #         filters='uglifyjs',
             #         output='module.js'
             #     )
             #     assets_env.register('module_js', module_js)
 
         module_js = Bundle(
             *module_js_list,
-            filters='rjsmin',
+            #filters='rjsmin',
+            filters='uglifyjs',
             output='module.js'
         )
         assets_env.register('module_js', module_js)
@@ -586,7 +590,8 @@ class WebSkeleton(object):
             # if bottom_js_list and len(bottom_js_list):
         bottom_js = Bundle(
             *bottom_js_list,
-            filters='rjsmin',
+            #filters='rjsmin',
+            filters='uglifyjs',
             output='bottom.js'
         )
         assets_env.register('bottom_js', bottom_js)
