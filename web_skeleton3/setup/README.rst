@@ -12,6 +12,11 @@ A skeleton based on:
 * `Sass <http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html>`_.
 * `Compass <http://compass-style.org/reference/compass/>`_.
 
+Install with::
+
+    pip3 install web-skeleton3
+
+
 .. warning:: To use scss remember install::
 
     sudo apt-get install ruby-dev ruby-rubygems
@@ -22,6 +27,12 @@ A skeleton based on:
     sudo pip3 install scour
     # sudo pip3 install cssutils
     #sudo pip3 install rjsmin
+
+Upload to pypi
+--------------
+
+flit build
+flit publish
 
 License
 -------

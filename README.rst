@@ -21,9 +21,12 @@ Remember install::
 
     sudo apt-get install ruby-dev ruby-rubygems
     sudo gem install compass
+    sudo gem install sass
+    npm install clean-css-cli -g
+    npm install uglify-js -g
     sudo pip3 install scour
-    sudo pip3 install cssutils
-    sudo pip3 install rjsmin
+    # sudo pip3 install cssutils
+    #sudo pip3 install rjsmin
 
 Upload to pypi
 --------------

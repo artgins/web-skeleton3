@@ -521,7 +521,7 @@ class WebSkeleton(object):
         top_js = Bundle(
             *top_js_list,
             #filters='rjsmin',
-            filters='uglifyjs',
+            #filters='uglifyjs',
             output='top.js'
         )
         assets_env.register('top_js', top_js)
@@ -552,7 +552,7 @@ class WebSkeleton(object):
             #     module_js = Bundle(
             #         *module_js_list,
             #         #filters='rjsmin',
-            #         filters='uglifyjs',
+            #         #filters='uglifyjs',
             #         output='module.js'
             #     )
             #     assets_env.register('module_js', module_js)
@@ -560,7 +560,7 @@ class WebSkeleton(object):
         module_js = Bundle(
             *module_js_list,
             #filters='rjsmin',
-            filters='uglifyjs',
+            #filters='uglifyjs',
             output='module.js'
         )
         assets_env.register('module_js', module_js)
@@ -591,7 +591,7 @@ class WebSkeleton(object):
         bottom_js = Bundle(
             *bottom_js_list,
             #filters='rjsmin',
-            filters='uglifyjs',
+            #filters='uglifyjs',
             output='bottom.js'
         )
         assets_env.register('bottom_js', bottom_js)
