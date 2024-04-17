@@ -490,7 +490,7 @@ class WebSkeleton(object):
                 css_bundle,
                 *scss_bundle,
                 #filters='cssutils,cssrewrite',
-                filters='cleancss',
+                # filters='cleancss',
                 output='packed.css'
             )
             assets_env.register('css', css)
